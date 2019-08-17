@@ -1,0 +1,19 @@
+html {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+#bookDisplay {
+    display: inline-block;
+    height: 250px;
+    width: 500px;
+    background-color: aliceblue;
+}
+
+.bookBox {
+    background-color: azure;
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px;
+    border: solid 1px black;
+}
