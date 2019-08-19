@@ -17,3 +17,9 @@ html {
     padding: 10px;
     border: solid 1px black;
 }
+
+.delBook{
+    color: red;
+    font-weight: bolder;
+    font-size: 2em;
+}
