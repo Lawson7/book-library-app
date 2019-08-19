@@ -5,8 +5,8 @@ html {
 
 #bookDisplay {
     display: inline-block;
-    height: 250px;
-    width: 500px;
+    height: 100%;
+    width: 75%;
     background-color: aliceblue;
 }
 

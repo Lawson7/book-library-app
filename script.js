@@ -83,7 +83,13 @@ function AddBookButton() {
     let title = prompt('Book Title?');
     let author = prompt('Book Author?');
     let pages = prompt('Number of Pages?');
-    let read = prompt('Read or Not Read?')
+    let read = ''
+
+    if (confirm("If read, click OK")) {
+        read = "Read";
+      } else {
+        read = "Not read";
+      }
     const newBook = new Book(title, author, pages + ' pages', read);
     addBookToLibrary(newBook);
     render(myLibrary);
