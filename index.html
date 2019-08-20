@@ -9,10 +9,28 @@
 </head>
 <body>
     <h1>Personal Library</h1>
+
+    <div id='formDisplay'>
+        <form name='addForm' action='javascript:AddBookButton();'>
+            Enter Book Details <br><br>
+            Title:
+            <input type="text" name='name'>
+            Author:
+            <input type='text' name='author'>
+            Genre:
+            <input type="text" name="genre">
+            <select name="read">
+                <option value="Read">Read</option>
+                <option value="Not Read">Not Read</option>
+            </select>
+            <button>Add</button>
+        </form>
+    </div>
+
+    <br><br>
     <div id='bookDisplay'></div>
-    <br>
-    <button onclick="AddBookButton()">New Book</button>
-    <div id='bookForm'></div>
+
+
 
 
     <script src="script.js"></script>

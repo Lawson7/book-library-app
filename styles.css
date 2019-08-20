@@ -3,23 +3,46 @@ html {
     text-align: center;
 }
 
+h1 {
+    color: orange;
+    font-family: monospace;
+}
+
+button {
+    font-family: monospace;
+    border-radius: 20px;
+}
+
+#formDisplay {
+    display:inline-block;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: monospace;
+}
+
 #bookDisplay {
     display: inline-block;
     height: 100%;
     width: 75%;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
-.bookBox {
+.bookCard {
     background-color: azure;
     display: inline-block;
     margin: 10px 5px;
-    padding: 10px;
-    border: solid 1px black;
+    padding: 4px 5px;
+    border: solid 0.5px black;
+    border-radius: 5px;
+    font-family: monospace;
+}
+.bookBox {
+
 }
 
 .delBook{
     color: red;
-    font-weight: bolder;
-    font-size: 2em;
+    font-size: 2.5em;
 }

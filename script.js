@@ -1,9 +1,9 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, genre, read) {
     this.title = title;
     this.author = author;
-    this.pages = pages;
+    this.genre = genre;
     this.read = read;
 };
 
@@ -22,8 +22,8 @@ function clearDisplay(){
 
 //test books
 
-const theHobbit = new Book('The Hobbit', 'That G', '301 pages', 'Not Read');
-const theAlchemist = new Book('The Alchemist', 'Paul C', '212 pages', 'Read');
+const theHobbit = new Book('The Hobbit', 'That G', 'Fiction', 'Not Read');
+const theAlchemist = new Book('The Alchemist', 'Paul C', 'Fiction', 'Read');
 
 addBookToLibrary(theAlchemist);
 addBookToLibrary(theHobbit);
@@ -37,23 +37,24 @@ function render(books) {
 
     books.forEach(book => {
 
+        const bookCard = document.createElement('div')
         const bookBox = document.createElement('div');
         const delButton = document.createElement('span');
 
+        bookCard.className = 'bookCard';
+        bookDisplay.appendChild(bookCard);
 
         bookBox.className = 'bookBox'
         bookBox.textContent = '';
-        bookDisplay.appendChild(bookBox);
+        bookCard.appendChild(bookBox);
 
         delButton.className = 'delBook'
-        delButton.textContent = '×'
-        bookDisplay.appendChild(delButton);
+        delButton.textContent = '🗑'
+        bookCard.appendChild(delButton);
 
         bookBox.setAttribute("order", books.indexOf(book));
-        console.log(bookBox.attributes.order)
 
         delButton.setAttribute("order", books.indexOf(book));
-        console.log(delButton.attributes.order)
     
         delButton.addEventListener('click', function(e){
 
@@ -61,9 +62,8 @@ function render(books) {
 
             for (let i = 0; i < myLibrary.length; i++) {
                 if (myLibrary[i].order == order) {
-                    bookBox.remove();
-                    delButton.remove();
-                    console.log(myLibrary)
+                    bookCard.remove();
+                    console.log(myLibrary);
                     myLibrary.splice(i, 1);
                     break;
                 }
@@ -80,17 +80,13 @@ function render(books) {
 render(myLibrary);
 
 function AddBookButton() {
-    let title = prompt('Book Title?');
-    let author = prompt('Book Author?');
-    let pages = prompt('Number of Pages?');
-    let read = ''
 
-    if (confirm("If read, click OK")) {
-        read = "Read";
-      } else {
-        read = "Not read";
-      }
-    const newBook = new Book(title, author, pages + ' pages', read);
+    const newBook = new Book(
+        addForm.name.value,
+        addForm.author.value,
+        addForm.genre.value,
+        addForm.read.value);
+
     addBookToLibrary(newBook);
     render(myLibrary);
 
