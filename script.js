@@ -41,24 +41,30 @@ function render(books) {
     books.forEach(book => {
 
         const bookCard = document.createElement('div')
+        const delButton = document.createElement('span');
         const bookBox = document.createElement('p');
         const readIcon = document.createElement('span')
-        const delButton = document.createElement('span');
 
         bookCard.className = 'bookCard';
         bookDisplay.appendChild(bookCard);
+
+        delButton.className = 'delBook'
+        delButton.textContent = '✘'
+        bookCard.appendChild(delButton);
 
         bookBox.className = 'bookBox'
         bookBox.textContent = book.title + ', ' + book.author + ', ' + book.genre + '.';
         bookCard.appendChild(bookBox);
 
-        readIcon.className = 'readIcon'
         readIcon.textContent = book.read
         bookCard.appendChild(readIcon);
 
-        delButton.className = 'delBook'
-        delButton.textContent = '🗑'
-        bookCard.appendChild(delButton);
+        if (book.read == 'Read'){
+            readIcon.className = 'readIconYes';
+        } else {
+            readIcon.className = 'readIconNo';
+        }
+
 
         bookBox.setAttribute("idNum", books.indexOf(book));
 
@@ -84,10 +90,12 @@ function render(books) {
             if (readStatus == 'Read'){
                 e.target.textContent = 'Not Read';
                 book.read = e.target.textContent;
+                readIcon.className = 'readIconNo'
 
             } else {
                 e.target.textContent = 'Read';
                 book.read = e.target.textContent;
+                readIcon.className = 'readIconYes'
             }
 
         });

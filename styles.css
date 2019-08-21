@@ -19,6 +19,7 @@ button {
     border-radius: 5px;
     padding: 10px;
     font-family: monospace;
+    width: 75%;
 }
 
 #bookDisplay {
@@ -31,7 +32,9 @@ button {
 
 .bookCard {
     background-color: azure;
+    position: relative;
     display: inline-block;
+    width: 80%;
     margin: 10px 5px;
     padding: 4px 5px;
     border: solid 0.5px black;
@@ -39,21 +42,42 @@ button {
     font-family: monospace;
 }
 .bookBox {
-
+    display: block;
+    padding: 5px;
 }
 
-.readIcon {
+.readIconYes {
+    display: inline-block;
     background-color: aqua;
     padding: 5px;
-    margin-right: 10px;
     border-radius: 5px;
+    font-family: monospace;
 }
 
-.readIcon:hover {
+.readIconYes:hover {
     background-color: turquoise;
 }
 
+.readIconNo {
+    display: inline-block;
+    background-color: #ff6666;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+.readIconNo:hover {
+    background-color: #ff9999;
+}
+
 .delBook{
+    position: relative;
+    float: right;
     color: red;
     font-size: 2.5em;
+    opacity: 0.4;
+}
+
+.delBook:hover{
+    opacity: 1;
 }
