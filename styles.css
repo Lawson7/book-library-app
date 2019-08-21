@@ -42,6 +42,17 @@ button {
 
 }
 
+.readIcon {
+    background-color: aqua;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.readIcon:hover {
+    background-color: turquoise;
+}
+
 .delBook{
     color: red;
     font-size: 2.5em;
