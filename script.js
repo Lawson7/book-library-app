@@ -66,20 +66,25 @@ function render(books) {
         }
 
 
-        bookBox.setAttribute("idNum", books.indexOf(book));
+        bookBox.setAttribute("id", books.indexOf(book));
 
-        delButton.setAttribute("idNum", books.indexOf(book));
+        delButton.setAttribute("id", books.indexOf(book));
     
         delButton.addEventListener('click', function(e){
 
-            let idNum = e.target.idNum;
+            const num = e.target.id;
+            console.log(num)
 
             for (let i = 0; i < myLibrary.length; i++) {
-                if (myLibrary[i].idNum == idNum) {
+                if (bookBox.id == num && myLibrary.length <= 1){
+                    myLibrary.splice(0, 1);
                     bookCard.remove();
                     console.log(myLibrary);
-                    myLibrary.splice(i, 1);
-                    break;
+                }
+                else if (bookBox.id == num) {
+                    myLibrary.splice(num, 1);
+                    bookCard.remove();
+                    console.log(myLibrary);
                 }
             }
         });
