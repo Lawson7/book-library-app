@@ -7,7 +7,6 @@ function Book(title, author, genre, read) {
     this.read = read;
 };
 
-
 function addBookToLibrary (Book){
     myLibrary.push(Book);
     
@@ -15,12 +14,7 @@ function addBookToLibrary (Book){
 
 const bookDisplay = document.getElementById('bookDisplay');
 
-
-function clearDisplay(){
-    bookDisplay.innerHTML = '';
-};
-
-//TEST BOOKS
+//EXAMPLE BOOKS
 
 const theHobbit = new Book('The Hobbit', 'That G', 'Fiction', 'Not Read');
 const theAlchemist = new Book('The Alchemist', 'Paul C', 'Fiction', 'Read');
@@ -28,13 +22,12 @@ const theAlchemist = new Book('The Alchemist', 'Paul C', 'Fiction', 'Read');
 addBookToLibrary(theAlchemist);
 addBookToLibrary(theHobbit);
 
-//TEST BOOKS
-
-
+//EXAMPLE BOOKS
 
 function render(books) {
 
-    clearDisplay()
+    //clears display
+    bookDisplay.innerHTML = '';
 
     books.forEach(book => {
 
@@ -63,62 +56,50 @@ function render(books) {
             readIcon.className = 'readIconNo';
         }
 
-
         bookBox.setAttribute("id", books.indexOf(book));
 
         delButton.setAttribute("id", books.indexOf(book));
     
-        delButton.addEventListener('click', function(e){
+        delButton.addEventListener('click', deleteBook)
 
-            const num = e.target.id;
-            console.log(num)
-
-            for (let i = 0; i < myLibrary.length; i++) {
-                if (bookBox.id == num && myLibrary.length <= 1){
-                    myLibrary.splice(0, 1);
-                    bookCard.remove();
-                    console.log(myLibrary);
-                }
-                else if (bookBox.id == num) {
-                    myLibrary.splice(num, 1);
-                    bookCard.remove();
-                    console.log(myLibrary);
-                }
-            }
-        });
-
-        readIcon.addEventListener('click', function(e){
-            const readStatus = e.target.textContent
-            
-            if (readStatus == 'Read'){
-                e.target.textContent = 'Not Read';
-                book.read = e.target.textContent;
-                readIcon.className = 'readIconNo'
-
-            } else {
-                e.target.textContent = 'Read';
-                book.read = e.target.textContent;
-                readIcon.className = 'readIconYes'
-            }
-
-        });
+        readIcon.addEventListener('click', readChange);
 
     });
 }
 
+function deleteBook(e){
+    const index = e.target.id;
+    console.log(index)
+    myLibrary.splice(index,1);
+    render(myLibrary);
+    console.log(myLibrary)
+}
+
+function readChange (e){
+    const readStatus = e.target.textContent
+    
+    if (readStatus == 'Read'){
+        e.target.textContent = 'Not Read';
+        e.target.read = e.target.textContent;
+        e.target.className = 'readIconNo'
+
+    } else {
+        e.target.textContent = 'Read';
+        e.target.read = e.target.textContent;
+        e.target.className = 'readIconYes'
+    }
+}
+
+//Initial render
 render(myLibrary);
-
-
 
 function openForm() {
     document.getElementById("formDisplay").style.display = "inline-block";
   }
 
-
 function closeForm() {
     document.getElementById("formDisplay").style.display = "none";
   }
-
 
 function AddBookButton() {
 
