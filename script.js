@@ -9,7 +9,6 @@ function Book(title, author, genre, read) {
 
 function addBookToLibrary (Book){
     myLibrary.push(Book);
-    
 };
 
 const bookDisplay = document.getElementById('bookDisplay');
@@ -57,22 +56,17 @@ function render(books) {
         }
 
         bookBox.setAttribute("id", books.indexOf(book));
-
         delButton.setAttribute("id", books.indexOf(book));
     
         delButton.addEventListener('click', deleteBook)
-
         readIcon.addEventListener('click', readChange);
-
     });
 }
 
 function deleteBook(e){
     const index = e.target.id;
-    console.log(index)
     myLibrary.splice(index,1);
     render(myLibrary);
-    console.log(myLibrary)
 }
 
 function readChange (e){
@@ -95,10 +89,14 @@ render(myLibrary);
 
 function openForm() {
     document.getElementById("formDisplay").style.display = "inline-block";
+    document.getElementById("addBookButton").style.display = "none";
+    document.getElementById("closeButton").style.display = "inline-block";
   }
 
 function closeForm() {
     document.getElementById("formDisplay").style.display = "none";
+    document.getElementById("addBookButton").style.display = "inline-block";
+    document.getElementById("closeButton").style.display = "none";
   }
 
 function AddBookButton() {

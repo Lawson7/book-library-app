@@ -14,9 +14,17 @@ button {
     border-radius: 20px;
 }
 
-.topButtons {
+#topButtons {
     display: block;
     margin-bottom: 10px;
+}
+
+#addBookButton {
+
+}
+
+#closeButton {
+    display: none;
 }
 
 #formDisplay {
