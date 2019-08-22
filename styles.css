@@ -1,6 +1,7 @@
 html {
     background-color: aquamarine;
     text-align: center;
+    font-family: monospace;
 }
 
 h1 {
@@ -13,13 +14,18 @@ button {
     border-radius: 20px;
 }
 
+.topButtons {
+    display: block;
+    margin-bottom: 10px;
+}
+
 #formDisplay {
-    display:inline-block;
+    display:none;
     background-color: aliceblue;
     border-radius: 5px;
     padding: 10px;
     font-family: monospace;
-    width: 75%;
+    width: 200px;
 }
 
 #bookDisplay {

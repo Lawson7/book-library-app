@@ -20,8 +20,6 @@ function clearDisplay(){
     bookDisplay.innerHTML = '';
 };
 
-
-
 //TEST BOOKS
 
 const theHobbit = new Book('The Hobbit', 'That G', 'Fiction', 'Not Read');
@@ -109,6 +107,18 @@ function render(books) {
 }
 
 render(myLibrary);
+
+
+
+function openForm() {
+    document.getElementById("formDisplay").style.display = "inline-block";
+  }
+
+
+function closeForm() {
+    document.getElementById("formDisplay").style.display = "none";
+  }
+
 
 function AddBookButton() {
 

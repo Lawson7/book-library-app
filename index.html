@@ -9,16 +9,20 @@
 </head>
 <body>
     <h1>Personal Library</h1>
+    <div class = 'topButtons'>
+        <button onclick="openForm()">Add</button>
+        <button onclick='closeForm()'>Close</button>
+    </div>
 
     <div id='formDisplay'>
         <form name='addForm' action='javascript:AddBookButton();'>
             Enter Book Details <br><br>
             Title:
-            <input type="text" name='title'>
+            <input type="text" name='title'> <br><br>
             Author:
-            <input type='text' name='author'>
+            <input type='text' name='author'> <br><br>
             Genre:
-            <input type="text" name="genre">
+            <input type="text" name="genre"><br><br>
             <select name="read">
                 <option value="Read">Read</option>
                 <option value="Not Read">Not Read</option>
