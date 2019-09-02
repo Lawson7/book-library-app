@@ -1,11 +1,12 @@
-html {
-    background-color: aquamarine;
+body,html {
+    background-color: white;
     text-align: center;
     font-family: monospace;
+    height: 100%;
 }
 
 h1 {
-    color: orange;
+    color: #45454d;
     font-family: monospace;
 }
 
@@ -14,12 +15,25 @@ button {
     border-radius: 20px;
 }
 
-#topButtons {
-    display: block;
-    margin-bottom: 10px;
+#headingContainer {
+    background-color: #eae9e9;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: solid 1px #45454d;
 }
 
-#addBookButton {
+
+#topButtons {
+    display: block;
+    margin-top: 80px;
+}
+
+#addBookButton img {
+
+    width: 40px;
+    height: 40px;
 
 }
 
@@ -27,31 +41,50 @@ button {
     display: none;
 }
 
+#closeButton img {
+    width: 30px;
+    height: 30px;
+}
+
 #formDisplay {
     display:none;
-    background-color: aliceblue;
+    background-color: #f2f4f6;
     border-radius: 5px;
     padding: 10px;
     font-family: monospace;
-    width: 200px;
+    width: 50%;
+}
+
+#formDisplay input {
+    margin-bottom: 15px;
+    border: solid 1px #64c4ed;
+    border-radius: 5px;
+    height: 20px;
+}
+
+#formDisplay select {
+    background-color: #eae9e9;
+}
+
+#bookSubmit {
+    background-color: #F2F4F6;
 }
 
 #bookDisplay {
     display: inline-block;
     height: 100%;
     width: 75%;
-    background-color: aliceblue;
     border-radius: 10px;
 }
 
 .bookCard {
-    background-color: azure;
+    background-color:#f2f4f6;
     position: relative;
     display: inline-block;
     width: 80%;
     margin: 10px 5px;
     padding: 4px 5px;
-    border: solid 0.5px black;
+    border: solid 1px black;
     border-radius: 5px;
     font-family: monospace;
 }
@@ -94,4 +127,10 @@ button {
 
 .delBook:hover{
     opacity: 1;
+}
+
+#iconLinks {
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
 }

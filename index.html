@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalise.css">
     <link rel="stylesheet" href="styles.css">
     <title>Book Library App</title>
 </head>
 <body>
-    <h1>Personal Library</h1>
+    <div id="headingContainer">
+        <h1>Your Books</h1>
+    </div>
     <div id = 'topButtons'>
-        <button id='addBookButton' onclick="openForm()">Add Book</button>
-        <button id='closeButton' onclick='closeForm()'>Close</button>
+        <span id='addBookButton' onclick="openForm()"><img src="icons/book.png" alt="Add book button"></span>
     </div>
 
     <div id='formDisplay'>
         <form name='addForm' action='javascript:AddBookButton();'>
-            Enter Book Details <br><br>
-            Title:
-            <input type="text" name='title'> <br><br>
-            Author:
-            <input type='text' name='author'> <br><br>
-            Genre:
-            <input type="text" name="genre"><br><br>
+            Enter Book Details <br> <br>
+            <input type="text" name='title' placeholder="Title">
+            <input type='text' name='author' placeholder="Author">
+            <input type="text" name="genre" placeholder="Genre">
             <select name="read">
                 <option value="Read">Read</option>
                 <option value="Not Read">Not Read</option>
             </select>
-            <input type="submit" value="Add Book">
+            <input type="submit" value="ADD" id="bookSubmit">
+            <br>
+            <span id='closeButton' onclick='closeForm()'><img src="icons/up-arrow.png" alt="Close add book"></span>
         </form>
     </div>
 
     <br><br>
     <div id='bookDisplay'></div>
+    <div id="iconLinks">Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
 
 
