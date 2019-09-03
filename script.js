@@ -57,31 +57,35 @@ function render(books) {
 
         bookBox.setAttribute("id", books.indexOf(book));
         delButton.setAttribute("id", books.indexOf(book));
+        readIcon.setAttribute("id", books.indexOf(book));
     
         delButton.addEventListener('click', deleteBook)
         readIcon.addEventListener('click', readChange);
     });
-}
+};
 
 function deleteBook(e){
     const index = e.target.id;
     myLibrary.splice(index,1);
     render(myLibrary);
-}
+};
 
 function readChange (e){
-    const readStatus = e.target.textContent
-    
+
+    const index = e.target.id;
+    const readStatus = e.target.textContent;
+
     if (readStatus == 'Read'){
+        myLibrary[index].read = 'Not Read';
         e.target.textContent = 'Not Read';
-        e.target.read = e.target.textContent;
-        e.target.className = 'readIconNo'
+        e.target.className = 'readIconNo';
 
     } else {
+        myLibrary[index].read = 'Read'
         e.target.textContent = 'Read';
-        e.target.read = e.target.textContent;
-        e.target.className = 'readIconYes'
+        e.target.className = 'readIconYes';
     }
+    render(myLibrary);
 }
 
 //Initial render
